@@ -23,18 +23,18 @@ export default class TestMatrix2 extends TestMatrix {
   testAdd() {
     console.info('test Matrix2.add()')
     const a = [
-      3, 9,
-      5, 6,
+      1, 6,
+      3, 8,
     ]
 
     const b = [
-      7, 2,
-      1, 3,
+      4, 3,
+      1, 2,
     ]
 
     const expected = [
-      10, 11,
-      6, 9,
+      5, 9,
+      4, 10,
     ]
 
     const m = new Matrix2(a)
@@ -50,18 +50,18 @@ export default class TestMatrix2 extends TestMatrix {
   testSub() {
     console.info('test Matrix2.sub()')
     const a = [
-      8, 6,
-      2, 7,
+      1, 6,
+      3, 8,
     ]
 
     const b = [
-      5, 9,
-      3, 2,
+      4, 3,
+      1, 2,
     ]
 
     const expected = [
-      3, -3,
-      -1, 5,
+      -3, 3,
+      2, 6,
     ]
 
     const m = new Matrix2(a)
@@ -73,18 +73,18 @@ export default class TestMatrix2 extends TestMatrix {
   testMul() {
     console.info('test Matrix2.mul()')
     const a = [
-      1, 2,
-      2, 5,
+      1, 6,
+      3, 8,
     ]
 
     const b = [
-      3, 4,
-      0, 2,
+      4, 3,
+      1, 2,
     ]
 
    const expected = [
-      3, 8,
-      6, 18,
+      10, 15,
+      20, 25,
     ]
 
     const m = new Matrix2(a)
@@ -124,14 +124,14 @@ export default class TestMatrix2 extends TestMatrix {
    */
   testRot() {
     console.info('test Matrix2.rot()')
-    const α = 180
+    const α = 90
     const a = [
         1, 0,
-        0, 6,
+        5, 0,
     ]
     const expected = [
-        -1, 0,
-        0, -6,
+        -5, 0,
+        1, 0,
     ]
     const m = new Matrix2(a)
     m.rot(α)

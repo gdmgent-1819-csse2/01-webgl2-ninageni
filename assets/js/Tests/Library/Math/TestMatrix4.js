@@ -23,24 +23,24 @@ export default class TestMatrix4 extends TestMatrix {
   testAdd() {
     console.info('test Matrix4.add()')
     const a = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5, 
-      3, 6, 7, 6,
+      1, 6, 5, 9,
+      3, 8, 4, 15,
+      2, 4, 7, 23, 
+      9, 15, 2, 13,
     ]
 
     const b = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5,
-      3, 6, 7, 6,
+      4, 3, 8, 8,
+      1, 2, 9, 12,
+      4, 5, 10, 4,
+      12, 4, 9, 17,
     ]
 
     const expected = [
-      2, 4, 6, 8,
-      2, 14, 12, 10,
-      4, 6, 8, 10,
-      6, 12, 14, 12,
+      5, 9, 13, 17,
+      4, 10, 13, 27,
+      6, 9, 17, 27,
+      21, 19, 11, 30,
     ]
 
     const m = new Matrix4(a)
@@ -56,24 +56,24 @@ export default class TestMatrix4 extends TestMatrix {
   testSub() {
     console.info('test Matrix4.sub()')
     const a = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5, 
-      3, 6, 7, 6,
+      1, 6, 5, 9,
+      3, 8, 4, 15,
+      2, 4, 7, 23, 
+      9, 15, 2, 13,
     ]
 
     const b = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5,
-      3, 6, 7, 6,
+      4, 3, 8, 8,
+      1, 2, 9, 12,
+      4, 5, 10, 4,
+      12, 4, 9, 17,
     ]
 
     const expected = [
-      0, 0, 0, 0,
-      0, 0, 0, 0,
-      0, 0, 0, 0,
-      0, 0, 0, 0,
+      -3, 3, -3, 1,
+      2, 6, -5, 3,
+      -2, -1, -3, 19,
+      -3, 11, -7, -4,
     ]
 
     const m = new Matrix4(a)
@@ -85,24 +85,24 @@ export default class TestMatrix4 extends TestMatrix {
   testMul() {
     console.info('test Matrix4.mul()')
     const a = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5, 
-      3, 6, 7, 6,
+      1, 6, 5, 9,
+      3, 8, 4, 15,
+      2, 4, 7, 23, 
+      9, 15, 2, 13,
     ]
 
     const b = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5,
-      3, 6, 7, 6,
+      4, 3, 8, 8,
+      1, 2, 9, 12,
+      4, 5, 10, 4,
+      12, 4, 9, 17,
     ]
 
     const expected = [
-      21, 49, 55, 53,
-      35, 99, 104, 99,
-      28, 67, 75, 73,
-      41, 105, 115, 113,
+      138, 76, 193, 253,
+      216, 105, 271, 391,
+      316, 141, 329, 483,
+      215, 119, 344, 481,
     ]
 
     const m = new Matrix4(a)
@@ -148,18 +148,18 @@ export default class TestMatrix4 extends TestMatrix {
    */
   testRot() {
     console.info('test Matrix4.rot()')
-    const α = 180
+    const α = 90
     const a = [
-      1, 2, 3, 4,
-      1, 7, 6, 5,
-      2, 3, 4, 5, 
-      3, 6, 7, 6,
+      1, 6, 5, 9,
+      3, 8, 4, 15,
+      2, 4, 7, 23, 
+      9, 15, 2, 13,
     ]
     const expected = [
-      1, 2, 3, 4,
-      -1, -7, -6, -5,
-      -2, -3, -4, -5, 
-      3, 6, 7, 6,
+      1, 6, 5, 9,
+      -2, -4, -7, -23,
+      3, 8, 4, 15, 
+      9, 15, 2, 13,
     ]
     const m = new Matrix4(a)
     m.rot(α)

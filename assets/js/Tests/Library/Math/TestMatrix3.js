@@ -23,21 +23,21 @@ export default class TestMatrix3 extends TestMatrix {
   testAdd() {
     console.info('test Matrix3.add()')
     const a = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      1, 6, 5,
+      3, 8, 4,
+      2, 4, 7,
     ]
 
     const b = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      4, 3, 8,
+      1, 2, 9,
+      4, 5, 10,
     ]
 
     const expected = [
-      2, 4, 6,
-      12, 10, 8,
-      14, 12, 6,
+      5, 9, 13,
+      4, 10, 13,
+      6, 9, 17,
     ]
 
     const m = new Matrix3(a)
@@ -53,21 +53,21 @@ export default class TestMatrix3 extends TestMatrix {
   testSub() {
     console.info('test Matrix3.sub()')
     const a = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      1, 6, 5,
+      3, 8, 4,
+      2, 4, 7,
     ]
 
     const b = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      4, 3, 8,
+      1, 2, 9,
+      4, 5, 10,
     ]
 
     const expected = [
-      0, 0, 0,
-      0, 0, 0,
-      0, 0, 0,
+      -3, 3, -3,
+      2, 6, -5,
+      -2, -1, -3,
     ]
 
     const m = new Matrix3(a)
@@ -79,21 +79,21 @@ export default class TestMatrix3 extends TestMatrix {
   testMul() {
     console.info('test Matrix3.mul()')
     const a = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      1, 6, 5,
+      3, 8, 4,
+      2, 4, 7,
     ]
 
     const b = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      4, 3, 8,
+      1, 2, 9,
+      4, 5, 10,
     ]
 
     const expected = [
-      34, 30, 20,
-      64, 61, 50,
-      64, 62, 54,
+      30, 40, 112,
+      36, 45, 136,
+      40, 49, 122,
     ]
 
     const m = new Matrix3(a)
@@ -136,16 +136,16 @@ export default class TestMatrix3 extends TestMatrix {
    */
   testRot() {
     console.info('test Matrix3.rot()')
-    const α = 180
+    const α = 90
     const a = [
-      1, 2, 3,
-      6, 5, 4,
-      7, 6, 3,
+      1, 6, 5,
+      3, 8, 4,
+      2, 4, 7,
     ]
     const expected = [
-        -1, -2, -3,
-        -6, -5, -4,
-        7, 6, 3,
+        -3, -8, -4,
+        1, 6, 5,
+        2, 4, 7,
     ]
     const m = new Matrix3(a)
     m.rot(α)

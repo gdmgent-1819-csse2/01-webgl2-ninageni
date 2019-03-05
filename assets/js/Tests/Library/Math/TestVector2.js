@@ -25,9 +25,9 @@ export default class TestVector2 extends TestMatrix {
     console.info('test Vector2.add()')
     const a = new Vector2(3, 6)
 
-    const b = new Vector2(6, 3)
+    const b = new Vector2(2, 3)
 
-    const expected = [9, 9]
+    const expected = [5, 9]
     a.add(b)
     const actual = [a. x, a.y]
     this.checkIdentical(actual, expected)
@@ -41,9 +41,9 @@ export default class TestVector2 extends TestMatrix {
     console.info('test Vector2.sub()')
     const a = new Vector2(3, 6)
 
-    const b = new Vector2(6, 3)
+    const b = new Vector2(2, 3)
 
-    const expected = [-3, 3]
+    const expected = [1, 3]
     a.sub(b)
     const actual = [a. x, a.y]
     this.checkIdentical(actual, expected)
@@ -53,9 +53,9 @@ export default class TestVector2 extends TestMatrix {
     console.info('test Vector2.scalar()')
     const a = new Vector2(3, 6)
 
-    const x = 6
+    const x = 5
 
-    const expected = [18, 36]
+    const expected = [15, 30]
     a.scalar(x)
     const actual = [a. x, a.y]
     this.checkIdentical(actual, expected)
@@ -75,9 +75,9 @@ export default class TestVector2 extends TestMatrix {
     console.info('test Vector2.dot()')
     const a = new Vector2(3, 6)
 
-    const b = new Vector2(6, 3)
+    const b = new Vector2(2, 3)
 
-    const expected = [36]
+    const expected = [24]
     a.dot(b)
     const actual = [a.dot(b)]
     this.checkIdentical(actual, expected)
@@ -87,9 +87,9 @@ export default class TestVector2 extends TestMatrix {
     console.info('test Vector2.rot()')
     const a = new Vector2(3, 6)
 
-    const α = 180
+    const α = 90
 
-    const expected = [-3, -6]
+    const expected = [-6, 3]
     a.rot(α)
     const actual = [a. x, a.y]
     this.checkIdenticalRounded(actual, expected)
