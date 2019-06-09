@@ -31,44 +31,44 @@ export default class Vector3
 
   /**
    * Addition of a vector to the current vector.
-   * @param {Vector3} v - The second vector.
+   * @param {Vector3} secondVector - The second vector.
    */
-  add(v) 
+  add(secondVector) 
   {
-    this.x += v.x
-    this.y += v.y
-    this.z += v.z
+    this.x += secondVector.x
+    this.y += secondVector.y
+    this.z += secondVector.z
   }
 
   /**
    * Subtraction of a vector from the current vector.
-   * @param {Vector3} v - The second vector.
+   * @param {Vector3} secondVector - The second vector.
    */
-  sub(v) 
+  sub(secondVector) 
   {
-    this.x -= v.x
-    this.y -= v.y
-    this.z -= v.z
+    this.x -= secondVector.x
+    this.y -= secondVector.y
+    this.z -= secondVector.z
   }
 
   /**
    * Scalar multiplication. Multiplies a vector by a scalar.
-   * @param {Number} a - The scalar value.
+   * @param {Number} firstVector - The scalar value.
    */
-  scalar(a) 
+  scalar(firstVector) 
   {
-    this.x *= a
-    this.y *= a
-    this.z *= a
+    this.x *= firstVector
+    this.y *= firstVector
+    this.z *= firstVector
   }
 
   /**
    * Calculate the dot product of the current vector and another vector.
-   * @param {Vector3} v - The second vector.
+   * @param {Vector3} secondVector - The second vector.
    * @return {Number} the dot product of the wzo
    */
-  dot(v) {
-    return this.x * v.x + this.y * v.y + this.z * v.z
+  dot(secondVector) {
+    return this.x * secondVector.x + this.y * secondVector.y + this.z * secondVector.z
   }
 
   /**
@@ -76,15 +76,15 @@ export default class Vector3
    * @param {Number} α - The anticlockwise angle in degrees.
    */
   rot(α) {
-    const m = new Matrix3([
+    const matrix = new Matrix3([
       this.x, 0, 0, 
       this.y, 0, 0,
       this.z, 0, 0,
     ])
-    m.rot(α)
-    console.log(m)
-    this.x = m.items[0]
-    this.y = m.items[3]
-    this.z = m.items[6]
+    matrix.rot(α)
+    console.log(matrix)
+    this.x = matrix.items[0]
+    this.y = matrix.items[3]
+    this.z = matrix.items[6]
   }
 }

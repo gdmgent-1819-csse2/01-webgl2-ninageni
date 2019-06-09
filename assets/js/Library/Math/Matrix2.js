@@ -16,45 +16,45 @@ export default class Matrix2
   /**
    * Addition of the second matrix to the current matrix
    * 
-   * @param {Array} b - Second matrix
+   * @param {Array} secondMatrix - Second matrix
    */
-  add(b)
+  add(secondMatrix)
   {
-    const a = this.items
+    const firstMatrix = this.items
     this.items = [
-      a[0] + b[0], a[1] + b[1],
-      a[2] + b[2], a[3] + b[3]
+      firstMatrix[0] + secondMatrix[0], firstMatrix[1] + secondMatrix[1],
+      firstMatrix[2] + secondMatrix[2], firstMatrix[3] + secondMatrix[3]
     ]
   }
 
   /**
    * Subtraction of the second matrix from the current matrix
    * 
-   * @param {Array} b - Second matrix
+   * @param {Array} secondMatrix - Second matrix
    */
-  sub(b)
+  sub(secondMatrix)
   {
-    const a = this.items
+    const firstMatrix = this.items
     this.items = [
-      a[0] - b[0], a[1] - b[1],
-      a[2] - b[2], a[3] - b[3]
+      firstMatrix[0] - secondMatrix[0], firstMatrix[1] - secondMatrix[1],
+      firstMatrix[2] - secondMatrix[2], firstMatrix[3] - secondMatrix[3]
     ]
   }
   /**
    * Multiplication of the current matrix by the second matrix
    * 
-   * @param {Array} b - Second matrix
+   * @param {Array} secondMatrix - Second matrix
    */
-  mul(b)
+  mul(secondMatrix)
   {
-    const a = this.items
-    const c = []
-    c[0] = a[0] * b[0] + a[1] * b[2]
-    c[1] = a[0] * b[1] + a[1] * b[3]
-    c[2] = a[2] * b[0] + a[3] * b[2]
-    c[3] = a[2] * b[1] + a[3] * b[3]
+    const firstMatrix = this.items
+    const resultMatrix = []
+    resutlMatrix[0] = firstMatrix[0] * secondMatrix[0] + firstMatrix[1] * secondMatrix[2]
+    resultMatrix[1] = firstMatrix[0] * secondMatrix[1] + firstMatrix[1] * secondMatrix[3]
+    resultMatrix[2] = firstMatrix[2] * secondMatrix[0] + firstMatrix[3] * secondMatrix[2]
+    resultMatrix[3] = firstMatrix[2] * secondMatrix[1] + firstMatrix[3] * secondMatrix[3]
 
-    this.items = c
+    this.items = resultMatrix
   }
   /**
    * Rotate the matrix around the origin.
@@ -64,12 +64,12 @@ export default class Matrix2
     α *= Math.PI / 180
     const cos = Math.cos(α)
     const sin = Math.sin(α)
-    const a = this.items
-    const r = [
+    const firstMatrix = this.items
+    const rotationMatrix = [
         cos, -sin,
         sin, cos,
     ]
-    this.items = r
-    this.mul(a);
+    this.items = rotationMatrix
+    this.mul(firstMatrix);
   }
 }

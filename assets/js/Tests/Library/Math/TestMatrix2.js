@@ -22,12 +22,12 @@ export default class TestMatrix2 extends TestMatrix {
 
   testAdd() {
     console.info('test Matrix2.add()')
-    const a = [
+    const firstMatrix = [
       1, 6,
       3, 8,
     ]
 
-    const b = [
+    const secondMatrix = [
       4, 3,
       1, 2,
     ]
@@ -37,9 +37,9 @@ export default class TestMatrix2 extends TestMatrix {
       4, 10,
     ]
 
-    const m = new Matrix2(a)
-    m.add(b)
-    const actual = m.items
+    const matrix = new Matrix2(firstMatrix)
+    matrix.add(secondMatrix)
+    const actual = matrix.items
     this.checkIdentical(actual, expected)
   }
 
@@ -49,12 +49,12 @@ export default class TestMatrix2 extends TestMatrix {
 
   testSub() {
     console.info('test Matrix2.sub()')
-    const a = [
+    const firstMatrix = [
       1, 6,
       3, 8,
     ]
 
-    const b = [
+    const secondMatrix = [
       4, 3,
       1, 2,
     ]
@@ -64,20 +64,20 @@ export default class TestMatrix2 extends TestMatrix {
       2, 6,
     ]
 
-    const m = new Matrix2(a)
-    m.sub(b)
-    const actual = m.items
+    const m = new Matrix2(firstMatrix)
+    matrix.sub(secondMatrix)
+    const actual = matrix.items
     this.checkIdentical(actual, expected)
   }
 
   testMul() {
     console.info('test Matrix2.mul()')
-    const a = [
+    const firstMatrix = [
       1, 6,
       3, 8,
     ]
 
-    const b = [
+    const secondMatrix = [
       4, 3,
       1, 2,
     ]
@@ -87,9 +87,9 @@ export default class TestMatrix2 extends TestMatrix {
       20, 25,
     ]
 
-    const m = new Matrix2(a)
-    m.mul(b)
-    const actual = m.items
+    const matrix = new Matrix2(firstMatrix)
+    matrix.mul(secondMatrix)
+    const actual = matrix.items
     this.checkIdentical(actual, expected)
   }
 
@@ -98,12 +98,12 @@ export default class TestMatrix2 extends TestMatrix {
    */
   testMulIdentity() {
     console.info('test Matrix2.mul() by identity matrix')
-    const a = [
+    const firstMatrix = [
       1, 6,
       3, 8,
     ]
 
-    const b = [
+    const secondMatrix = [
       1, 0,
       0, 1,
     ]
@@ -113,9 +113,9 @@ export default class TestMatrix2 extends TestMatrix {
       3, 8,
     ]
 
-    const m = new Matrix2(a)
-    m.mul(b)
-    const actual = m.items
+    const matrix = new Matrix2(firstMatrix)
+    matrix.mul(secondMatrix)
+    const actual = matrix.items
     this.checkIdentical(actual, expected)
   }
 
@@ -133,9 +133,9 @@ export default class TestMatrix2 extends TestMatrix {
         -5, 0,
         1, 0,
     ]
-    const m = new Matrix2(a)
-    m.rot(α)
-    const actual = m.items
+    const matrix = new Matrix2(firstMatrix)
+    matrix.rot(α)
+    const actual = matrix.items
     this.checkIdenticalRounded(actual, expected)
   }
 

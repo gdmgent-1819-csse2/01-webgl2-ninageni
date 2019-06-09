@@ -24,41 +24,41 @@ export default class Vector2
   }
   /**
    * Addition of a vector to the current vector.
-   * @param {Vector2} v - The second vector.
+   * @param {Vector2} secondVector - The second vector.
    */
-  add(v) 
+  add(secondVector) 
   {
-    this.x += v.x
-    this.y += v.y
+    this.x += secondVector.x
+    this.y += secondVector.y
   }
 
   /**
    * Subtraction of a vector from the current vector.
-   * @param {Vector2} v - The second vector.
+   * @param {Vector2} secondVector - The second vector.
    */
-  sub(v) 
+  sub(secondVector) 
   {
-    this.x -= v.x
-    this.y -= v.y
+    this.x -= secondVector.x
+    this.y -= secondVector.y
   }
 
   /**
    * Scalar multiplication. Multiplies a vector by a scalar.
-   * @param {Number} a - The scalar value.
+   * @param {Number} firstVector - The scalar value.
    */
-  scalar(a) 
+  scalar(firstVector) 
   {
-    this.x *= a
-    this.y *= a
+    this.x *= firstVector
+    this.y *= firstVector
   }
 
   /**
    * Calculate the dot product of the current vector and another vector.
-   * @param {Vector2} v - The second vector.
+   * @param {Vector2} secondVector - The second vector.
    * @return {Number} the dot product of the wzo
    */
-  dot(v) {
-    return this.x * v.x + this.y * v.y
+  dot(secondVector) {
+    return this.x * secondVector.x + this.y * secondVector.y
   }
 
   /**
@@ -66,13 +66,13 @@ export default class Vector2
    * @param {Number} α - The anticlockwise angle in degrees.
    */
   rot(α) {
-    const m = new Matrix2([
+    const matrix = new Matrix2([
       this.x, 0, 
       this.y, 0
     ])
-    m.rot(α)
-    console.log(m)
-    this.x = m.items[0]
-    this.y = m.items[2]
+    matrix.rot(α)
+    console.log(matrix)
+    this.x = matrix.items[0]
+    this.y = matrix.items[2]
   }
 }

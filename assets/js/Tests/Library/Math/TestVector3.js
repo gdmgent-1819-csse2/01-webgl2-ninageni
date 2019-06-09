@@ -23,13 +23,13 @@ export default class TestVector3 extends TestMatrix {
 
   testAdd() {
     console.info('test Vector3.add()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
-    const b = new Vector3(2, 3, 5)
+    const secondVector = new Vector3(2, 3, 5)
 
     const expected = [5, 9, 13]
-    a.add(b)
-    const actual = [a. x, a.y, a.z]
+    firstVector.add(secondVector)
+    const actual = [firstVector. x, firstVector.y, firstVector.z]
     this.checkIdentical(actual, expected)
   }
 
@@ -39,59 +39,59 @@ export default class TestVector3 extends TestMatrix {
 
   testSub() {
     console.info('test Vector3.sub()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
-    const b = new Vector3(2, 3, 5)
+    const secondVector = new Vector3(2, 3, 5)
 
     const expected = [1, 3, 3]
-    a.sub(b)
-    const actual = [a. x, a.y, a.z]
+    firstVector.sub(secondVector)
+    const actual = [firstVector. x, firstVector.y, firstVector.z]
     this.checkIdentical(actual, expected)
   }
 
   testScalar() {
     console.info('test Vector3.scalar()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
-    const x = 5
+    const scalar = 5
 
     const expected = [15, 30, 40]
-    a.scalar(x)
-    const actual = [a. x, a.y, a.z]
+    firstVector.scalar(scalar)
+    const actual = [firstVector. x, firstVector.y, firstVector.z]
     this.checkIdentical(actual, expected)
   }
 
   testNorm() {
     console.info('test Vector3.norm()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
     const expected = [10]
     
-    const actual = [a.norm()]
+    const actual = [firstVector.norm()]
     this.checkIdenticalRounded(actual, expected)
   }
 
   testDot() {
     console.info('test Vector3.dot()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
-    const b = new Vector3(2, 3, 5)
+    const secondVector = new Vector3(2, 3, 5)
 
     const expected = [64]
-    a.dot(b)
-    const actual = [a.dot(b)]
+    firstVector.dot(secondVector)
+    const actual = [firstVector.dot(secondVector)]
     this.checkIdentical(actual, expected)
   }
 
   testRot() {
     console.info('test Vector3.rot()')
-    const a = new Vector3(3, 6, 8)
+    const firstVector = new Vector3(3, 6, 8)
 
     const α = 90
 
     const expected = [-6, 3, 8]
-    a.rot(α)
-    const actual = [a. x, a.y, a.z]
+    frameElement.rot(α)
+    const actual = [firstVector. x, firstVector.y, firstVector.z]
     this.checkIdenticalRounded(actual, expected)
   }
 }

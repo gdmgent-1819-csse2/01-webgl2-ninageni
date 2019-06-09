@@ -52,13 +52,13 @@ export default class Canvas {
         this.data.positions.push(0, 0)
         this.data.colors.push(...this.colors.white)
 
-        const v = new Vector2(0.8, 0)
-        this.data.positions.push(v.x, v.y)
+        const vector = new Vector2(0.8, 0)
+        this.data.positions.push(vector.x, vector.y)
         this.data.colors.push(...this.colors.white)
 
         for(let i = 0; i < 12; i++){
-            v.rot(30);
-            this.data.positions.push(v.x, v.y)
+            vector.rot(30);
+            this.data.positions.push(vector.x, vector.y)
             this.data.colors.push(...this.colors.white)
         } 
 
