@@ -53,13 +53,13 @@ export default class Vector3
 
   /**
    * Scalar multiplication. Multiplies a vector by a scalar.
-   * @param {Number} firstVector - The scalar value.
+   * @param {Number} scalar - The scalar value.
    */
-  scalar(firstVector) 
+  scalar(scalar) 
   {
-    this.x *= firstVector
-    this.y *= firstVector
-    this.z *= firstVector
+    this.x *= scalar
+    this.y *= scalar
+    this.z *= scalar
   }
 
   /**

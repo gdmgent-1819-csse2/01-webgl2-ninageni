@@ -40,14 +40,6 @@ export default class Canvas {
         console.log('updateCanvas')
         this.clearData()
 
-        const colors = [
-            'green',
-            'blue',
-            'cyan',
-            'magenta',
-            'yellow',
-        ]
-
         // White point in the middle
         this.data.positions.push(0, 0)
         this.data.colors.push(...this.colors.white)
@@ -80,15 +72,6 @@ export default class Canvas {
         hoursVector.rot(hours * -6)
         this.data.positions.push(hoursVector.x, hoursVector.y)
         this.data.colors.push(...this.colors.cyan)
-
-
-
-
-        // colors.forEach(color => {
-        //     v.rot(45)
-        //     this.data.positions.push(v.x, v.y)
-        //     this.data.colors.push(...this.colors[color])
-        // });
 
         this.drawScene()
     }
